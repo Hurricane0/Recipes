@@ -6,4 +6,4 @@ API for this project is taken from www.edamam.com.
 
 In this project are used React Hooks, ES6+ syntax, and minamal responsive grid. 
 
-You can  get a glimpse of my work here: 
+You can  get a glimpse of my work here: https://hurricane0.github.io/Recipes/
