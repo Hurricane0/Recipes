@@ -13,3 +13,13 @@
 .image {
   border-radius: 50%;
 }
+.light_recipe {
+  background: #efeeee;
+  box-shadow: 5px 5px 10px #cbcaca, -5px -5px 10px #ffffff;
+  color: #3f3f3f;
+}
+.dark_recipe {
+  background: #1c1c1c;
+  box-shadow: 7px 7px 14px #121212, -7px -7px 14px #262626;
+  color: #757575;
+}
