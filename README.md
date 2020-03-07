@@ -5,3 +5,5 @@ Simple SPA for searching for some recipes, the amount of sugar or number of calo
 API for this project is taken from www.edamam.com. 
 
 In this project are used React Hooks, ES6+ syntax, and minamal responsive grid. 
+
+You can  get a glimpse of my work here: 
