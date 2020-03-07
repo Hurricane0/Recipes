@@ -1,19 +1,22 @@
 import React from "react";
 import s from "./ModeButton.module.css";
+import { IconContext } from "react-icons";
+import { FaRegMoon } from "react-icons/fa";
+import { FiSun } from "react-icons/fi";
 
 export default ({ toggleMode, mode }) => (
-  <div
-    onClick={toggleMode}
-    className={`${s.button_container} ${mode ? s.light : s.dark}`}
+  <IconContext.Provider
+    value={{
+      color: `${mode ? "#3f3f3f" : "#757575"}`,
+      className: "global-class-name",
+      size: `${mode ? "25px" : "20px"}`
+    }}
   >
-    <img
-      height="40px"
-      src={`${
-        mode
-          ? "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/OOjs_UI_icon_sun-ltr.svg/1024px-OOjs_UI_icon_sun-ltr.svg.png"
-          : "https://static.thenounproject.com/png/765894-200.png"
-      }`}
-      alt="mode"
-    />
-  </div>
+    <div
+      onClick={toggleMode}
+      className={`${s.button_container} ${mode ? s.light : s.dark}`}
+    >
+      {mode ? <FiSun /> : <FaRegMoon />}
+    </div>
+  </IconContext.Provider>
 );
