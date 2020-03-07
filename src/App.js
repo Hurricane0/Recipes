@@ -13,11 +13,13 @@ function App() {
 
   useEffect(() => {
     getRecipes();
+    // eslint-disable-next-line
   }, [query]);
 
   const submitSearch = e => {
     e.preventDefault();
     setQuery(search);
+    setSearch("");
   };
 
   const getRecipes = async () => {
@@ -35,18 +37,21 @@ function App() {
         submitSearch={submitSearch}
         setSearch={setSearch}
       />
-      {recipes ? (
-        recipes.map(recipe => (
-          <Recipe
-            key={recipe.recipe.label}
-            title={recipe.recipe.label}
-            calories={recipe.recipe.calories}
-            image={recipe.recipe.image}
-          />
-        ))
-      ) : (
-        <span>Loading...</span>
-      )}
+      <div className="recipes">
+        {recipes ? (
+          recipes.map(recipe => (
+            <Recipe
+              key={recipe.recipe.label}
+              title={recipe.recipe.label}
+              calories={recipe.recipe.calories}
+              image={recipe.recipe.image}
+              ingredients={recipe.recipe.ingredients}
+            />
+          ))
+        ) : (
+          <span>Loading...</span>
+        )}
+      </div>
     </div>
   );
 }
