@@ -1,5 +1,6 @@
 .App {
   min-height: 100vh;
+  transition: 0.3s;
 }
 .light_app {
   background-color: #efeeee;
@@ -12,6 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.3s;
 }
 
 .search_bar {
@@ -21,6 +23,7 @@
   border-radius: 50px;
   margin-right: 5px;
   outline: none;
+  transition: 0.3s;
 }
 .light_search_bar {
   background: #efeeee;
@@ -45,6 +48,7 @@
 
   font-weight: 300;
   outline: none;
+  transition: all 0.3s;
 }
 .light_search_button {
   color: #202020;
