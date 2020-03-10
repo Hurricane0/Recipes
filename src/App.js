@@ -15,6 +15,15 @@ function App() {
   const [mode, setMode] = useState(true);
 
   useEffect(() => {
+    const localMode = localStorage.getItem("mode");
+    setMode(localMode === "true" ? true : false);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("mode", mode);
+  }, [mode]);
+
+  useEffect(() => {
     getRecipes();
     // eslint-disable-next-line
   }, [query]);
