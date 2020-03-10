@@ -8,7 +8,7 @@ export default ({ title, calories, image, ingredients, mode }) => (
     <strong>Calories: {Math.round(calories)}</strong>
     <ul>
       {ingredients.map(ingredient => (
-        <li>{ingredient.text}</li>
+        <li key={ingredient.text + ingredient.weight}>{ingredient.text}</li>
       ))}
     </ul>
   </div>

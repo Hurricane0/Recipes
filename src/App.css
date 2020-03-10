@@ -1,3 +1,9 @@
+@media only screen and (max-width: 600px) {
+  .form {
+    width: 100% !important;
+  }
+}
+
 .App {
   min-height: 100vh;
   transition: 0.3s;
@@ -14,6 +20,13 @@
   justify-content: center;
   align-items: center;
   transition: 0.3s;
+  width: 100%;
+}
+.form {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search_bar {
@@ -30,6 +43,7 @@
   box-shadow: 5px 5px 10px #cbcaca, -5px -5px 10px #ffffff;
 }
 .dark_search_bar {
+  color: #757575;
   background: #1c1c1c;
   box-shadow: 7px 7px 14px #121212, -7px -7px 14px #262626;
 }

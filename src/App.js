@@ -8,6 +8,7 @@ function App() {
   const ID = "0d5cc5d4";
   const KEY = "7dc40ea0fb8947cd4f15771445c2d3f1";
 
+  const [isLoading, setIsLoading] = useState(true);
   const [recipes, setRecipes] = useState(null);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("chicken");
@@ -25,11 +26,13 @@ function App() {
   };
 
   const getRecipes = async () => {
+    setIsLoading(true);
     const response = await fetch(
       `https://api.edamam.com/search?q=${query}&app_id=${ID}&app_key=${KEY}&from=0&to=3&calories=591-722&health=alcohol-free`
     );
     const data = await response.json();
     setRecipes(data.hits);
+    setIsLoading(false);
   };
 
   const toggleMode = () => {
@@ -44,10 +47,10 @@ function App() {
         mode={mode}
       />
       <div className={"recipes"}>
-        {recipes ? (
+        {!isLoading ? (
           recipes.map(recipe => (
             <Recipe
-              key={recipe.recipe.label}
+              key={recipe.recipe.label + recipe.recipe.calories}
               title={recipe.recipe.label}
               calories={recipe.recipe.calories}
               image={recipe.recipe.image}
