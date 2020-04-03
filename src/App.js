@@ -71,7 +71,7 @@ function App() {
           <span>Loading...</span>
         )}
       </div>
-      <ModeButton mode={mode} toggleMode={toggleMode} />
+      {/* <ModeButton mode={mode} toggleMode={toggleMode} /> */}
     </div>
   );
 }
